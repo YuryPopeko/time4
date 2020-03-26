@@ -1,0 +1,39 @@
+.show-statistics {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.statistics-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  margin: auto;
+  width: 80vh;
+  height: 80vh;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 10px 40px 0 rgba(8, 10, 14, .25);
+  transform: scale(0);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: .2s, .16s;
+  transition-timing-function: ease-in-out, ease-in-out;
+}
+
+.statistics-modal.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.statistics-modal {
+  font-size: 1.4em;
+  font-weight: 600;
+}

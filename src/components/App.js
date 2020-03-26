@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 import '../styles/App.css';
+import Statistics from './statistics';
 import Timer from './timer';
-import Control from './control';
+import Control from './Control';
 
 const Time4 = () => {
   const [usefullS, setUsefullS] = useState(0);
@@ -28,6 +29,7 @@ const Time4 = () => {
 
   return (
     <>
+      <Statistics usefullS={usefullS} wastedS={wastedS} />
       <div className="timers">
         <Timer name="usefull" seconds={usefullS} setSeconds={setUsefullS} isActive={isUsefullActive} />
         <Timer name="wasted" seconds={wastedS} setSeconds={setWastedS} isActive={isWastedActive} />
