@@ -4,6 +4,7 @@ import '../styles/App.css';
 import Statistics from './statistics';
 import Timer from './timer';
 import Control from './Control';
+import Sprite from './Sprite';
 
 const Time4 = () => {
   const [usefullS, setUsefullS] = useState(0);
@@ -29,6 +30,7 @@ const Time4 = () => {
 
   return (
     <>
+      <Sprite />
       <Statistics usefullS={usefullS} wastedS={wastedS} />
       <div className="timers">
         <Timer name="usefull" seconds={usefullS} setSeconds={setUsefullS} isActive={isUsefullActive} />

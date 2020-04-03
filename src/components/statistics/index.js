@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PieChart from 'react-minimal-pie-chart';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import Icon from '../icon'
-
 import './styles.css';
 
 const Statistics = ({ usefullS, wastedS }) => {
@@ -17,13 +17,23 @@ const Statistics = ({ usefullS, wastedS }) => {
       </button>
       <div className={`statistics-modal${isOpen ? ' open' : ''}`}>
         {haveNoData
-          ? <p>You have no data</p>
-          : <PieChart
-            data={[
-              { title: 'Usefull', value: usefullS, color: 'green' },
-              { title: 'Wasted', value: wastedS, color: '#772323' }
-            ]}
-          />
+          ? <p className="no-data">You have no data</p>
+          : <Tabs className="tabs">
+            <TabList className="tablist">
+              <Tab>Today</Tab>
+              <Tab selected={true}>History</Tab>
+            </TabList>
+            <TabPanel>
+              <PieChart
+                data={[
+                  { title: 'Usefull', value: usefullS, color: 'green' },
+                  { title: 'Wasted', value: wastedS, color: '#772323' }
+                ]}
+                className="chart"
+              />
+            </TabPanel>
+            <TabPanel></TabPanel>
+          </Tabs>
         }
       </div>
     </>
